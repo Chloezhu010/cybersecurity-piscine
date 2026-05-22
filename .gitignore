@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+docs/
+notes/
+CLAUDE.md
+AGENTS.md
+*.DS_Store
