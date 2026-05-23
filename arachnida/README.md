@@ -9,12 +9,7 @@
 - Write the decision logic, eg. what URLs to visit, what images to download, how recursion works, how paths are resolved, how duplicates/errors are handled
 
 ## Implementation
-### Language choice: Python
-- argparse: cmd line options
-- requests/ urllib: http
-- html.parser, BeautifulSoup: parse html
-- urllib.parse.urljoin: resolve relative urls
-- pathlib/ os: save files
+### Language choice: Rust
 
 
 ## Notes
