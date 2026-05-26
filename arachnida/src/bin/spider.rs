@@ -21,11 +21,30 @@ struct Args {
     path: String,
 }
 
+fn parse_args() -> Args {
+    Args::parse()
+}
+
+fn fetch_page(url: &str) -> Result<String, reqwest::Error> {
+    let response = reqwest::blocking::get(url)?.error_for_status()?;
+    let body = response.text()?;
+    Ok(body)
+}
+
+fn extract_image_urls(html: &str, base_url: &Url) -> Vec<Url> {
+    
+}
+
 fn main(){
-    let args = Args::parse();
+    let args = parse_args();
 
     println!("URL: {}", args.url);
     println!("Recursive: {}", args.recursive);
     println!("Max Recursion Depth: {}", args.length);
     println!("Output Path: {}", args.path);
+
+    match fetch_page(&args.url) {
+        Ok(content) => println!("Fetched content ({} bytes)", content.len()),
+        Err(e) => eprintln!("Failed to fetch page: {}", e),
+    }
 }
