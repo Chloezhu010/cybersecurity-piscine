@@ -59,6 +59,7 @@ dependencies = [
  "clap",
  "reqwest",
  "scraper",
+ "url",
 ]
 
 [[package]]
